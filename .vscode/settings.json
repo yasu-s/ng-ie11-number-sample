@@ -1,0 +1,15 @@
+{
+    "git.ignoreLimitWarning": true,
+    "tslint.alwaysShowRuleFailuresAsWarnings": true,
+    "tslint.alwaysShowStatus": true,
+    "tslint.configFile": "tslint.json",
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "[typescript]": {
+        "files.trimTrailingWhitespace": true
+    },
+    "editor.tabSize": 2,
+    "files.insertFinalNewline": true,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+}
