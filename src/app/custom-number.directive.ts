@@ -35,7 +35,7 @@ export class CustomNumberDirective {
    * @param event
    */
   @HostListener('keypress', ['$event'])
-  onKeydown(event: KeyboardEvent) {
+  onKeyPress(event: KeyboardEvent) {
     const str = String.fromCharCode(event.which);
 
     if (!'0123456789'.includes(str))

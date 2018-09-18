@@ -29,6 +29,9 @@ npm install
 npm start
 ```
 
+## 4. 実行結果  
+
+![ie11](https://user-images.githubusercontent.com/2668146/45686245-e19d6300-bb86-11e8-8248-76656edac24f.gif)
 
 # サンプルソース
 
@@ -59,7 +62,7 @@ export class CustomNumberDirective {
    * @param event
    */
   @HostListener('keypress', ['$event'])
-  onKeydown(event: KeyboardEvent) {
+  onKeyPress(event: KeyboardEvent) {
     const str = String.fromCharCode(event.which);
 
     if (!'0123456789'.includes(str))
