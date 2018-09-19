@@ -54,7 +54,7 @@ export class CustomNumberDirective {
    */
   constructor(private elementRef: ElementRef) {
     if (!this.elementRef || !this.elementRef.nativeElement) return;
-    this.inputElement = (<HTMLInputElement>this.elementRef.nativeElement);
+    this.inputElement = <HTMLInputElement>this.elementRef.nativeElement;
   }
 
   /**
@@ -63,9 +63,7 @@ export class CustomNumberDirective {
    */
   @HostListener('keypress', ['$event'])
   onKeyPress(event: KeyboardEvent) {
-    const str = String.fromCharCode(event.which);
-
-    if (!'0123456789'.includes(str))
+    if (!'0123456789'.includes(event.key))
       event.preventDefault();
   }
 
