@@ -32,7 +32,7 @@ export class CustomNumberDirective {
 
   /**
    * 数値のみ入力
-   * @param event
+   * @param event KeyboardEvent
    */
   @HostListener('keypress', ['$event'])
   onKeyPress(event: KeyboardEvent) {

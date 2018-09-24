@@ -1,39 +1,39 @@
-# Overview  
+# 概要  
 
-This is a sample number input directive compatible with IE11.
+IE11対応のnumber入力ディレクティブのサンプルです。
 
-# System requirements
+# 実行環境
 
 * Node.js 8.9.x
 * TypeScript 2.9.x
 * Angular 6.1.x
 
-# Operation check  
+# 動作確認  
 
-## 1. Download Sample
+## 1. サンプルのダウンロード
 
 ```
 git clone git@github.com:yasu-s/ng-ie11-number-sample.git
 ```
 
-## 2. Installing packages  
+## 2. パッケージインストール  
 
 ```
 cd ng-ie11-number-sample
 npm install
 ```
 
-## 3. Launch sample application  
+## 3. サンプルの起動  
 
 ```
 npm start
 ```
 
-## 4. Execution result  
+## 4. 実行結果  
 
 ![ie11](https://user-images.githubusercontent.com/2668146/45686245-e19d6300-bb86-11e8-8248-76656edac24f.gif)
 
-# Sample source
+# サンプルソース
 
 ## src/app/custom-number.directive.ts
 
@@ -45,11 +45,11 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class CustomNumberDirective {
 
-  /** input */
+  /** inputタグ */
   private inputElement: HTMLInputElement;
 
   /**
-   * CustomNumberDirective 
+   * CustomNumberDirective 生成処理
    * @param elementRef
    */
   constructor(private elementRef: ElementRef) {
@@ -58,7 +58,7 @@ export class CustomNumberDirective {
   }
 
   /**
-   * Enter numerical value only.
+   * 数値のみ入力
    * @param event KeyboardEvent
    */
   @HostListener('keypress', ['$event'])
@@ -68,7 +68,7 @@ export class CustomNumberDirective {
   }
 
   /**
-   * Convert to numerical value when focus is off.
+   * フォーカスが外れた時に数値整形
    */
   @HostListener('blur')
   onBlur(): void {
