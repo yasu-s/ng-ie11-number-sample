@@ -27,7 +27,7 @@ export class CustomNumberDirective {
    */
   @HostListener('keypress', ['$event'])
   onKeyPress(event: KeyboardEvent) {
-    if (!'0123456789'.includes(event.key))
+    if (!/^\d*$/.test(event.key))
       event.preventDefault();
   }
 
