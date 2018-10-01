@@ -27,23 +27,15 @@ export class CustomNumberDirective {
    */
   @HostListener('keypress', ['$event'])
   onKeyPress(event: KeyboardEvent) {
-    if (!/^\d*$/.test(event.key))
+    if (/^\d*$/.test(event.key)) {
+      if (!this.elementRef || !this.elementRef.nativeElement) return;
+      const value = this.elementRef.nativeElement.value;
+      if (value && value.startsWith('0')) {
+        this.elementRef.nativeElement.value = parseFloat(value + event.key).toString();
+        event.preventDefault();
+      }
+    } else
       event.preventDefault();
-  }
-
-  /**
-   * フォーカスが外れた時に数値整形
-   */
-  @HostListener('blur')
-  onBlur(): void {
-    if (!this.elementRef || !this.elementRef.nativeElement) return;
-    const value = this.elementRef.nativeElement.value;
-    if (value === null || value === '') return;
-
-    const num = Number(value);
-
-    if (!isNaN(num))
-      this.elementRef.nativeElement.value = num.toString();
   }
 
 // #endregion
